@@ -14,15 +14,21 @@ def guess_the_number():
         except ValueError:
             print("Пожалуйста, введи целое число.")
             continue
+
         popitka += 1
+
         if predpolozhenie < secretik:
             print("Твое число меньше загаданного.")
-        elif secretik < predpolozhenie:
+        elif predpolozhenie > secretik:
             print("Твое число больше загаданного.")
         else:
-            print(f"Поздравляю, ты угадал число. Загаданное число было: {secretik}.")
-            return
-
-            print(f"К сожалению ты использовал все попытки. Загаданное число было: {secretik}. Удачи в следующий раз!")
+            print(f"Поздравляю, ты угадал число! Загаданное число было: {secretik}.")
             break
+    else:
+        print(f"К сожалению, ты использовал все попытки. Загаданное число было: {secretik}. Удачи в следующий раз!")
+
+    print("\nДля повторной игры нажми на любую клавишу.")
+    input()
+    guess_the_number()
+
 guess_the_number()
